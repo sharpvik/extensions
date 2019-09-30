@@ -58,8 +58,9 @@ class File:
         self.path = Path(strpath)
         fullname = strpath.split(os.sep)[-1].split('.')
         self.name = fullname[0]
-        self.ext = fullname[1:]
-        self.suffix = '.'.join( self.get_ext() )
+        self.ext = [ each.lower() for each in fullname[1:] ]
+        self.suffix = '.'.join( self.get_ext() ) if len( self.get_ext() ) > 0 \
+                      else ''
 
     def get_path(self):
         return self.path
@@ -80,4 +81,5 @@ class File:
         return open( self.get_str_path(), mode ).read()
 
     def __str__(self):
-        return f'<File: {self.name}.{self.suffix}>'
+        return f'<File: {self.name}.{self.suffix}>' if self.suffix != '' else \
+               f'<File: {self.name}>'

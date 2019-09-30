@@ -69,7 +69,7 @@ aside .menu-bar p {
     margin-left: 10px;
     font-size: 18px;
 }
-aside input[type="reset"], input[type="submit"] {
+aside input[type="submit"] {
     display: inline-block;
     margin: 10px 15px 15px 0;
     font-size: 18px;
@@ -78,6 +78,7 @@ aside input[type="reset"], input[type="submit"] {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
 main {

@@ -40,7 +40,7 @@ def analyse( dir=os.getcwd(), ext=dict(), ttl=0 ):
     ext = dict(ext)
     ttl = int(ttl)
 
-    log( 'Looking through ' + str(dir) + '...' )
+    log(f'Looking through {str}')
 
     for item in dir.contents():
         """
@@ -53,10 +53,12 @@ def analyse( dir=os.getcwd(), ext=dict(), ttl=0 ):
             file = item
             if CONFIG["ignore multisuffix files"] \
                and len( file.get_ext() ) > 1 \
+               or CONFIG["ignore extentionles files"] \
+               and len( file.get_ext() ) == 0 \
                or match_ignored_extentions(file):
                 log( str(file) + ' is invalid. Skipping...' )
                 continue
-            log( str(file) + ' discovered and accounted for.' )
+            log(f'{file} discovered and accounted for.')
             suf = file.get_suffix()
             if suf not in ext:
                 ext[suf] = 1
@@ -70,7 +72,7 @@ def analyse( dir=os.getcwd(), ext=dict(), ttl=0 ):
             test_dir = item
             if CONFIG['recursive'] and \
                test_dir.get_name() not in CONFIG["ignored directories"]:
-                log( str(test_dir) + ' discovered. Opening...' )
+                log(f'{test_dir} discovered. Opening...')
                 ext, ttl = analyse( test_dir.get_str_path(), ext, ttl )
             else:
                 log(
@@ -81,7 +83,7 @@ def analyse( dir=os.getcwd(), ext=dict(), ttl=0 ):
                     ' Skipping...'
                 )
 
-    log( 'Escaping ' + str(dir) + '...' )
+    log(f'Escaping {dir}...')
     log(
         f'Results:\n{ttl} files in total\n' + \
         f'{json.dumps(ext, sort_keys=True, indent=4)}'
