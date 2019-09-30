@@ -1,0 +1,6 @@
+{
+    "ignore multisuffix files": true,
+    "ignore extentionles files": true,
+    "ignored extentions": ["tar", "gz", "zip", "out"],
+    "ignored directories": ["__pycache__", ".vscode", ".git"]
+}

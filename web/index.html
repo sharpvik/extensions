@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Extentions</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <aside>
+        <form>
+            <input id="path" type="text" value="/home/sharpvik/Projects/extentions/test">
+
+            <div class="menu-bar">
+                <div id="r" class="switch switch-on">
+                    <div class="toggler"></div>
+                </div>
+                <p>Recursive search</p>
+            </div>
+
+            <div class="menu-bar">
+                <div id="cwd" class="switch switch-off">
+                    <div class="toggler"></div>
+                </div>
+                <p>Current working directory</p>
+            </div>
+            
+            <input id="submit" type="submit" value="Analyse">
+        </form>
+    </aside>
+
+    <main>
+        <div id="colors"></div>
+        <div id="results">
+            <!-- An example of a result
+            <div class="result-line">
+                <div class="color-thumbnail"></div>
+                <span class="extention">JavaScript -- 42 file(s)</span>
+            </div>
+            -->
+        </div>
+    </main>
+
+    <script src="/eel.js"></script>
+    <script src="util.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
