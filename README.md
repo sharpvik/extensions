@@ -2,7 +2,7 @@
 
 This is an app that imitates how GitHub shows you proportions of different file types.
 
-[Here is how it works](srn.png)
+![Here is how it works](srn.png)
 
 ## Contact
 
