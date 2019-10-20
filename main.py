@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os, eel
 import json, jsonio
 from sys import argv
