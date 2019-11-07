@@ -10,7 +10,7 @@ from path import Path, Dir, File
 S = os.sep
 HOME = f'{S}home{S}sharpvik'
 FLAGS = set()
-CONFIG_FILE = File(f'{HOME}{S}Projects{S}extentions{S}config.json')
+CONFIG_FILE = File(f'{HOME}{S}Projects{S}extensions{S}config.json')
 CONFIG = dict()
 
 
